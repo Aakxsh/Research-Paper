@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show New Links on Click</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    #initialLink {
+      color: black;
+      text-decoration: none;
+    }
+
+    /* Styling for links with custom text and formatting */
+    .custom-link-1, .custom-link-2, .custom-link-3 {
+      color: black;
+      text-decoration: none; /* Removes underline */
+    }
+
+    .custom-link-1::before {
+      content: "1.paper : ";
+      color: black;
+    }
+
+    .custom-link-2::before {
+      content: "2.paper : ";
+      color: black;
+    }
+
+    .custom-link-3::before {
+      content: "3.paper : ";
+      color: black;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Initial link to be clicked -->
+  <a href="#" id="initialLink" onclick="showNewLinks()">Click here for research paper</a>
+
+  <!-- New links, initially hidden -->
+  <div id="newLinks" class="hidden">
+    <a href="https://link.springer.com/chapter/10.1007/978-981-97-4149-6_33" target="_blank" class="custom-link-1">Enhancing the Security of Web Application Using Firebase Auth</a> <br>
+
+    <a href="https://ieeexplore.ieee.org/document/10690607" target="_blank" class="custom-link-2">Hybrid Model for Predicting Used Car Prices: Integrating Natural Language Processing with Random Forest Regressor</a> <br>
+
+    <a href="https://link.springer.com/chapter/10.1007/978-3-031-64064-3_20" target="_blank" class="custom-link-3">Applications of Data Science and Machine Learning for Combating COVID-19</a>
+  </div>
+
+  <!-- JavaScript to handle the link display -->
+  <script>
+    function showNewLinks() {
+      // Hide the initial link
+      document.getElementById("initialLink").style.display = "none";
+      
+      // Show the new links
+      document.getElementById("newLinks").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
